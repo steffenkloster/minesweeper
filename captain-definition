@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "dockerfileLines": [
     "FROM node:14.15.1 as build",
     "WORKDIR /app",
