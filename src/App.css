@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cell {
+  @apply flex items-center justify-center w-5 h-5 border-2 cursor-pointer;
+  border-style: outset;
+  font-family: minesweeper;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cell:active {
+  border-style: solid;
+  border-color: #8B8B8B;
+  border-width: 1px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cell.toggled {
+  border-style: solid;
+  border-color: #8B8B8B;
+  border-width: 1px;
+
+  cursor: default;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.cell.toggled.bomb {
+  @apply bg-red-600;
 }
 
-.App-link {
-  color: #61dafb;
+.cell.flagged {
+  background: #000000;
+  background: linear-gradient(to top, #000000 50%, #FF0000 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.controlpanel > div {
+  @apply py-1 px-2 hover:bg-[#dddabd] cursor-pointer;
+}
+
+.game-button.idle:before, .game-button.started:before {
+  content: '😊'
+}
+
+.game-button.won:before {
+  content: '😎'
+}
+
+.game-button.dead:before {
+  content: '😵'
+}
+
+.game-button:active:before {
+  content: '😲'
+}
+
+.game-button {
+  border-style: outset;
+}
+
+.game-button:active {
+  border-style: inset;
 }
