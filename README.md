@@ -7,3 +7,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - React
 - TailwindCSS
 - XP.css
+
+## Live demo
+[Check out a live demo here](https://minesweeper.server.steffen.codes/)
